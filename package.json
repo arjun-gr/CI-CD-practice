@@ -1,0 +1,28 @@
+{
+  "name": "ci-cd-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "echo \"Build step done\"",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjun-gr/CI-CD-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arjun-gr/CI-CD-practice/issues"
+  },
+  "homepage": "https://github.com/arjun-gr/CI-CD-practice#readme",
+  "dependencies": {
+    "eslint": "^10.5.0",
+    "express": "^5.2.1",
+    "jest": "^30.4.2"
+  }
+}
