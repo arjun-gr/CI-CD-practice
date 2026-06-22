@@ -55,3 +55,15 @@ jobs:
           context: .
           push: true
           tags: kaiju20/my-app:latest
+
+      - name: deploy to server
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.REMOTE_HOST}}
+          username: ${{secrets.REMOTE_USER}}
+          key: ${{secrets.REMOTE_KEY}}
+          script: |
+            docker pull kaiju20/my-app:latest
+            docker stop my-app || true
+            docker rm my-app || true
+            docker run -d --name my-app -p 3000:3000 kaiju20/my-app:latest
