@@ -54,4 +54,4 @@ jobs:
         with:
           context: .
           push: true
-          tag: ${{secrets.DOCKER_USER}}/my-app:latest
+          tag: kaiju20/my-app:latest
