@@ -1,15 +1,9 @@
-const express = require("express");
+import request from "supertest";
+import app from "../index.js";
 
-const app = express();
-
-app.get("/", (req, res) => {
-  res.json({ message: "CI/CD is working!" });
+describe("GET /", () => {
+  it("should return message", async () => {
+    const res = await request(app).get("/");
+    expect(res.body.message).toBe("CI/CD is working!");
+  });
 });
-
-const PORT = 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
-module.exports = app;
